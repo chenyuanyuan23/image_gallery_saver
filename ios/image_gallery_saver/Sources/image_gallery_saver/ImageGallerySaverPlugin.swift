@@ -2,14 +2,15 @@ import Flutter
 import UIKit
 import Photos
 
-public class SwiftImageGallerySaverPlugin: NSObject, FlutterPlugin {
+@objc(ImageGallerySaverPlugin)
+public class ImageGallerySaverPlugin: NSObject, FlutterPlugin {
     let errorMessage = "Failed to save, please check whether the permission is enabled"
     
     var result: FlutterResult?;
 
     public static func register(with registrar: FlutterPluginRegistrar) {
       let channel = FlutterMethodChannel(name: "image_gallery_saver", binaryMessenger: registrar.messenger())
-      let instance = SwiftImageGallerySaverPlugin()
+      let instance = ImageGallerySaverPlugin()
       registrar.addMethodCallDelegate(instance, channel: channel)
     }
 
